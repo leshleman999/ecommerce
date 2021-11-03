@@ -1,0 +1,169 @@
+<Link to="/checkout">
+                    <div className='header__optionBasket'>
+                        <ShoppingBasketIcon />
+                        <span className="header__optionLineTwo header__basketCount">0</span>
+                    </div>
+                </Link>
+>goes to page without full page re-rendering
+
+
+.header__searchIcon{
+    padding: 5px;
+    height: 22px !important;
+    background-color: #cd9042;
+
+>use padding to resize an object
+>overrides the amzaon font size default with !important
+
+header__search
+    display:flex;
+    flex: 1;
+>allow for input to use as much space as it needs, whereas the logo has a specific width
+
+.header__logo{
+    width:100px;
+    object-fit: contain;
+>keeps the aspect ration
+
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+Sticks, Keep it at the top 0, always stays on top of everything
+
+
+
+<Route path="/">
+	<Header />
+        <Home />
+</Route>  
+>next multiple components in a route
+
+
+React powers up a website
+- auto refreshes
+- provides components, state, build single-page apps
+- it's a powerup sitting onto of html,css, js to get benefits of component based design, short term memory of state, props to reuse components but be different
+- making it faster, hot reloads, develop time is faster, easier, smoother, everything happens in real-time
+- easy, fast
+- react allows you to have one web page where specific parts of the page can be updated without refreshing the whole page
+- each component loads on its own time - components don't wait for each other, so the user has something to look at right away
+- really fast!!!
+
+
+.home__image{
+    width:100%; 
+    z-index: -1;
+    margin-bottom: -150px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+>apply a gradiant with mask-image
+
+
+<img alt="Save up to 15% with auto-delivery" src="https://m.media-amazon.com/images/I/71gSMIREmCL._SX3000_.jpg" class="_cropped-image-link_style_fluidLandscapeImage__3eTVC _cropped-image-link_style_fluidImage__iJ3aE" data-a-hires="https://m.media-amazon.com/images/I/71gSMIREmCL._SX3000_.jpg">
+
+.home{
+    max-width: 1500px;
+    margin-left:auto;
+    margin-right:auto;
+}
+>keeps content from massive streching on really wide monitors
+
+
+
+Prefer Functional over Class based functions, React hooks allow you to do everything that you can do in class based component
+Functional components - new way of running components, fresh, previously class based, has input and output, has parameter
+Class based, complicated (constructor, inheritance, where are things happening?, old way, clunky)
+Learn both!!! to make the $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+For converting from one to another as part of your job.
+Include in my resume that I know both.
+
+
+                     
+
+                        Array(rating)
+                        .fill()
+                        .map((_) =>  (
+                            <p>x</p>
+                        ))
+>For rating stars!!!
+
+
+
+Firebase is better than mongo
+Firebase can serve as a backend host
+Less complexity
+Firebase with React
+
+
+React context = React Context API
+Redux is another solution
+Redux has been around for a long time, very powerful, higher learning curve, production steady
+NO longer need prop drilling
+
+add to the basket = dispatch
+data is refreshed everywhere?
+
+
+in index.js wrap app in StateProvider context api
+import { StateProvider} from "./StateProvider";
+
+ReactDOM.render(
+  <React.StrictMode>		
+    <StateProvider>			<--- a higher order component that injects props into all components
+      <App />
+    </StateProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+In StateProvider.js
+//setting up data layer of global variables to track the basket 
+import React, { createContext, useContext, useReducer } from 'react';
+
+//data layer
+export const Statecontext = createContext();
+
+//build a Provider (wrapper) to give access to entire app
+export const StateProvider = ({ reducer, initialState, children} ) => (
+    <Statecontext.Provider value={useReducer(reducer,initialState)}>
+        {children}
+    </Statecontext.Provider>
+);
+
+Read up on React Context API from React site
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
